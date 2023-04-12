@@ -8,6 +8,8 @@ import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
 
+
+
 public class LocacaoService {
 	
 	public Locacao alugarFilme(Usuario usuario, Filme filme) {
@@ -28,7 +30,10 @@ public class LocacaoService {
 		return locacao;
 	}
 
-	public static void main(String[] args) {
+
+
+	public void teste() {
+
 		
 	}
 }
