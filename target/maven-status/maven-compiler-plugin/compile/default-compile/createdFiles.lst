@@ -1,0 +1,7 @@
+br\com\rss\entidades\Usuario.class
+br\com\rss\entidades\Usuario$UsuarioBuilder.class
+br\com\rss\entidades\Locacao.class
+br\com\rss\entidades\Filme$FilmeBuilder.class
+br\com\rss\utils\DataUtils.class
+br\com\rss\entidades\Filme.class
+br\com\rss\servicos\LocacaoService.class

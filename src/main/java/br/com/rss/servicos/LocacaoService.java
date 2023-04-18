@@ -1,18 +1,26 @@
-package br.ce.wcaquino.servicos;
+package br.com.rss.servicos;
 
-import static br.ce.wcaquino.utils.DataUtils.adicionarDias;
+import static br.com.rss.utils.DataUtils.adicionarDias;
 
 import java.util.Date;
+import java.util.Objects;
 
-import br.ce.wcaquino.entidades.Filme;
-import br.ce.wcaquino.entidades.Locacao;
-import br.ce.wcaquino.entidades.Usuario;
-
+import br.com.rss.entidades.Filme;
+import br.com.rss.entidades.Locacao;
+import br.com.rss.entidades.Usuario;
+import exception.FilmesSemEstoqueException;
+import exception.LocadoraExcepiton;
 
 
 public class LocacaoService {
 	
-	public Locacao alugarFilme(Usuario usuario, Filme filme) {
+	public Locacao alugarFilme(Usuario usuario, Filme filme) throws FilmesSemEstoqueException, LocadoraExcepiton {
+		if(filme.getEstoque() ==0){
+			throw new FilmesSemEstoqueException("Filme sem estoque");
+		}
+		if(Objects.isNull(usuario)){
+			throw new LocadoraExcepiton("Usuario vazio");
+		}
 		Locacao locacao = new Locacao();
 		locacao.setFilme(filme);
 		locacao.setUsuario(usuario);
@@ -30,10 +38,4 @@ public class LocacaoService {
 		return locacao;
 	}
 
-
-
-	public void teste() {
-
-		
-	}
 }

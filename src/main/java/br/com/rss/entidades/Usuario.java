@@ -1,20 +1,11 @@
-package br.ce.wcaquino.entidades;
+package br.com.rss.entidades;
 
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
 public class Usuario {
 
 	private String nome;
-	
-	public Usuario() {}
-	
-	public Usuario(String nome) {
-		this.nome = nome;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 }
